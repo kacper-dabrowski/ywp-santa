@@ -24,3 +24,9 @@ a {
     background: black;
   }
 }
+
+body{
+  width:100%;
+  /* background-image: url('/AC90A20D-3D83-4E1B-AB67-42A405FBACCA.png') !important;
+  background-size:cover; */
+}
