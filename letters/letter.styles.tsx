@@ -9,10 +9,15 @@ export const Table = styled.table`
 `;
 
 export const Container = styled.div`
-padding-top:40%;
-  background-image: url(${getImageUrl()});
+padding-top:35%;
+background-image: url(${getImageUrl()});
   background-size: contain;
   background-repeat:no-repeat;
+
+  @media(min-width:1920px){
+  background-size: cover;
+
+  }
 `;
 
 export const Wrapper = styled.div`
