@@ -3,7 +3,6 @@ import fs from "fs/promises";
 import path from "path";
 
 export const excludedKeys = [
-  "Twój adres mailowy",
   "Musisz zaakceptować wszystkie poniższe zasady, żeby móc się zapisać.",
   "Dziękujemy, że chcesz wziąć udział w Wąsowym Secret Santa 2022. Jak oceniasz ten formularz?",
   "Czarna lista",
@@ -12,6 +11,7 @@ export const excludedKeys = [
 ];
 
 const deliveryDetailsKeys = [
+  "Twój adres mailowy",
   "Rodzaj dostawy",
   "Polski adres jak na kopercie",
   "Twój numer telefonu",
@@ -49,6 +49,10 @@ async function mapDto(dto: Array<Array<string>>): Promise<WishlistModel[]> {
       }
 
       if (deliveryDetailsKeys.includes(key)) {
+        if (!value) {
+          return;
+        }
+        
         deliveryEntries.push([key, value]);
         return;
       }
@@ -95,8 +99,9 @@ export const getUsernamesFromList = async () => {
 
   const usernameKey = "Twoja nazwa na forum YWP";
 
-  return list.map((element) =>
-    element.personalDetails.find(([key, value]) => key ==usernameKey)?.[1]
+  return list.map(
+    (element) =>
+      element.personalDetails.find(([key, value]) => key == usernameKey)?.[1]
   );
 };
 
