@@ -14,8 +14,10 @@ export const renderLetter = (responseObject: WishlistModel): JSX.Element => {
   return (
     <Container>
       <Header username={username} />
-      <Flex flexDir={"column"}>
-        <Table style={{ tableLayout: "fixed", width:'80%', margin:'20px auto',  }}>
+      <Flex flexDir={"column"} paddingBottom="40px">
+        <Table
+          style={{ tableLayout: "fixed", width: "80%", margin: "20px auto" }}
+        >
           <Thead>
             <Tr>
               <Th>Pytanie</Th>
@@ -30,8 +32,15 @@ export const renderLetter = (responseObject: WishlistModel): JSX.Element => {
               ))}
           </Tbody>
         </Table>
-
-        <Table>
+        <p style={{ width: "80%", margin: "40px auto", textAlign: "center", fontWeight:'bold', fontSize:'1.5rem' }}>
+          Aby osoba mogła otrzymać Twój prezent wyślij go na adres, który podała
+          w formularzu,
+          <br /> pamiętaj jednak, żeby wysłać prezent maksymalnie do 9 grudnia
+          2021 roku!
+        </p>
+        <Table
+          style={{ tableLayout: "fixed", width: "80%", margin: "20px auto" }}
+        >
           <Thead>
             <Tr>
               <Th colSpan={2}>Dane dostawy</Th>
@@ -43,6 +52,23 @@ export const renderLetter = (responseObject: WishlistModel): JSX.Element => {
             ))}
           </tbody>
         </Table>
+
+        <p style={{ width: "80%", margin: "0 auto", textAlign: "justify",fontSize:'1.2rem' }}>
+          Po wysłaniu prezentu pamiętaj, żeby wysłać nam w odpowiedzi do tej
+          wiadomości numer do śledzenia paczki, co da nam możliwość sprawdzenia
+          czy obdarowywany otrzymał swój prezent. Skoro otrzymałeś tą wiadomość
+          oznacza to, że Ty również masz swojego sekretnego Mikołaja! Oczekuj
+          więc prezentu w swojej skrzynce (lub w rękach kuriera czy w otworze
+          paczkomatu), a jak już prezent rozpakujesz możesz się nim pochwalić w
+          odpowiednim temacie na forum. Jeżeli chcesz trochę ułatwić zadanie
+          swojemu mikołajowi możesz zmienić ustawienia swojego konta na forum z
+          prywatnego na publiczny, żeby Mikołaj mógł na podstawie twoich postów
+          dowiedzieć się o Tobie trochę więcej. Jeśli wszystko jest jasne, to
+          odpowiedz na tę wiadomość. Daj nam znać, że do Ciebie dotarła.
+          (wystarczy, że klikniesz serduszko pod tą wiadomością) Z
+          poważaniem,Elfowi pomocnicy! P.S. Jeśli masz jakiś problem lub pytania
+          w pierwszej kolejności napisz do nas.
+        </p>
       </Flex>
     </Container>
   );
