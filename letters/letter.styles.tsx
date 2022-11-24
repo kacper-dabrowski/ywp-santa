@@ -9,13 +9,14 @@ export const Table = styled.table`
 `;
 
 export const Container = styled.div`
-  background-image: url(data:image/png;base64,${getImageUrl()});
-  background-size: cover;
+padding-top:40%;
+  background-image: url(${getImageUrl()});
+  background-size: contain;
+  background-repeat:no-repeat;
 `;
 
 export const Wrapper = styled.div`
   padding-top: 40%;
   padding-bottom: 10%;
-  width: 70%;
   margin: auto;
 `;
