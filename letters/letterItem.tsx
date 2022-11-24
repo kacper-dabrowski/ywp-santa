@@ -1,12 +1,12 @@
-import { TableData } from "./letterItem.styles";
+import { Td, Tr } from "@chakra-ui/react";
 
 export const LetterItem = ({ entry }: { entry: [string, string] }) => {
   const [key, value] = entry;
 
   return (
-    <tr>
-      <TableData key={key}>{key}</TableData>
-      <TableData>{value}</TableData>
-    </tr>
+    <Tr>
+      <Td key={key}>{key}</Td>
+      <Td>{value}</Td>
+    </Tr>
   );
 };

@@ -35,5 +35,5 @@ text-align:center;`
 
 const Wrapper = styled.div`
 text-align:center;
-width:40%;
+width:80%;
 margin:0 auto;`
