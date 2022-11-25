@@ -52,7 +52,7 @@ async function mapDto(dto: Array<Array<string>>): Promise<WishlistModel[]> {
         if (!value) {
           return;
         }
-        
+
         deliveryEntries.push([key, value]);
         return;
       }
@@ -75,6 +75,10 @@ function goodChildrenListToObject(
 ): Record<string, string> {
   return keys.reduce((obj, key, index) => {
     if (excludedKeys.includes(key)) {
+      return obj;
+    }
+
+    if (!values[index]) {
       return obj;
     }
 
